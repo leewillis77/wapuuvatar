@@ -20,5 +20,8 @@ Fun? For the love of Wapuus? Do you need more reason?
 
 ## Changelog
 
+#### 1.1
+* Add Edinburgh Wapuu
+
 #### 1.0
 * Initial release
