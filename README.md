@@ -8,6 +8,11 @@ Uses Wapuus from [the Wapuu archive](https://github.com/jawordpressorg/wapuu) as
 * Choose "Random Wapuus" under "Default avatar"
 * Enjoy all the Wapuus
 
+## Screenshot
+
+![Screenshot of Wapuuvatar in action.](https://raw.githubusercontent.com/leewillis77/wapuuvatar/master/screenshot-1.png "Screenshot of Wapuuvatar in action")
+)
+
 ## Frequently asked questions
 
 #### Erm, why would I want to do this?
