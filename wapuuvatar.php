@@ -205,5 +205,6 @@ function wapuuvatar_get_wapuus() {
 		'wct2012',
 		'wct2013',
 		'wctokyo_wapuu-1',
+		'edinburgh-wapuu',
 	);
 }
