@@ -3,8 +3,8 @@ Contributors: leewillis77
 Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&utm_medium=www&utm_campaign=wapuuvatar
 Tags: avatar, wapuu
 Requires at least: 3.0
-Tested up to: 4.3
-Stable tag: 1.1
+Tested up to: 4.3.1
+Stable tag: 1.2
 
 == Description ==
 Uses Wapuus from [the Wapuu archive](https://github.com/jawordpressorg/wapuu) as your site avatars.
@@ -27,6 +27,9 @@ Fun? For the love of Wapuus? Do you need more reason?
 1. Wapuus in action
 
 == Changelog ==
+
+= 1.2 =
+* WordPres.org release
 
 = 1.1 =
 * Add Edinburgh Wapuu
