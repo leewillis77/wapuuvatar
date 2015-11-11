@@ -45,7 +45,7 @@ add_action( 'init', 'wapuuvatar_init' );
  * @return array                   Modified array of avatar types.
  */
 function wapuuvatar_avatar_defaults( $avatar_defaults ) {
-	$avatar_defaults['wapuuvatar'] = __( 'Random wapuus', 'wapuuvatar' );
+	$avatar_defaults['wapuuvatar'] = __( 'Random wapuus (No gravatar)', 'wapuuvatar' );
 	return $avatar_defaults;
 }
 add_filter( 'avatar_defaults', 'wapuuvatar_avatar_defaults' );
