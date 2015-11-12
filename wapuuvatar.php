@@ -45,7 +45,8 @@ add_action( 'init', 'wapuuvatar_init' );
  * @return array                   Modified array of avatar types.
  */
 function wapuuvatar_avatar_defaults( $avatar_defaults ) {
-	$avatar_defaults['wapuuvatar'] = __( 'Random wapuus (No gravatar)', 'wapuuvatar' );
+	$avatar_defaults['dwapuuvatar'] = __( 'Random wapuus', 'wapuuvatar' );
+	$avatar_defaults['wapuuvatar'] = __( 'Random wapuus everywhere (No gravatars at all)', 'wapuuvatar' );
 	return $avatar_defaults;
 }
 add_filter( 'avatar_defaults', 'wapuuvatar_avatar_defaults' );
@@ -63,22 +64,27 @@ function wapuuvatar_get_avatar( $avatar, $id_or_email, $size, $default, $alt, $a
 			$default = get_option( 'avatar_default', 'mystery' );
 		}
 	}
-	if ( $default != 'wapuuvatar' ) {
+	if ( $default != 'wapuuvatar' && $default != 'dwapuuvatar' ) {
 		return $avatar;
 	}
 	list ( $url, $url2x ) = wapuuvatar_generate_avatar_url( $id_or_email, $size );
 	$class = array( 'avatar', 'avatar-' . (int) $args['size'], 'photo' );
-	return sprintf(
-		"<img alt='%s' src='%s' srcset='%s' class='%s' height='%d' width='%d' %s/>",
-		esc_attr( $args['alt'] ),
-		esc_url( $url ),
-		esc_attr( "$url2x 2x" ),
-		esc_attr( join( ' ', $class ) ),
-		(int) $args['height'],
-		(int) $args['width'],
-		$args['extra_attr']
-	);
-	return ;
+	if ( $default == 'wapuuvatar' ) {
+		return sprintf(
+			"<img alt='%s' src='%s' srcset='%s' class='%s' height='%d' width='%d' %s/>",
+			esc_attr( $args['alt'] ),
+			esc_url( $url ),
+			esc_attr( "$url2x 2x" ),
+			esc_attr( join( ' ', $class ) ),
+			(int) $args['height'],
+			(int) $args['width'],
+			$args['extra_attr']
+		);
+	}
+	if ( 'dwapuuvatar' == $default ) {
+		return str_replace( 'dwapuuvatar', urlencode( esc_url( $url ) ), $avatar );
+	}
+	return $avatar;
 }
 add_filter( 'get_avatar', 'wapuuvatar_get_avatar', 10, 6 );
 
@@ -111,8 +117,8 @@ function wapuuvatar_generate_avatar_url( $id_or_email, $requested_size ) {
     $base_url = plugins_url() . '/wapuuvatar/dist/';
 
 	return array(
-		add_query_arg( array( 'size' => $requested_size ), $base_url . $wapuu_img ),
-		add_query_arg( array( 'size' => $requested_size ), $base_url . $wapuu_img2x ),
+		$base_url . $wapuu_img,
+		$base_url . $wapuu_img2x,
 	);
 }
 
