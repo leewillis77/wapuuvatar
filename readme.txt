@@ -4,7 +4,7 @@ Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&
 Tags: avatar, wapuu
 Requires at least: 3.0
 Tested up to: 4.3.1
-Stable tag: 2.0
+Stable tag: 2.1
 
 == Description ==
 Uses Wapuus from [the Wapuu archive](https://github.com/jawordpressorg/wapuu) as your site avatars.
@@ -27,6 +27,9 @@ Fun? For the love of Wapuus? Do you need more reason?
 1. Wapuus in action
 
 == Changelog ==
+
+= 2.1 =
+* Add more Wapuus - courtesy of @marktimemedia
 
 = 2.0 =
 * Option to use gravatar with Wapuus as a fallback, not just Wapuus everywhere

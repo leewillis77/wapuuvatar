@@ -20,6 +20,9 @@ Fun? For the love of Wapuus? Do you need more reason?
 
 ## Changelog
 
+#### 2.1
+* Add more Wapuus, courtest of @marktimemedia.
+
 #### 2.0
 * Option to use gravatar with Wapuu as a fallback, not just Wapuus everywhere
 
