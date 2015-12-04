@@ -20,6 +20,9 @@ Fun? For the love of Wapuus? Do you need more reason?
 
 ## Changelog
 
+#### 2.3
+* Add EduWapuu, Wapevil and SwedenWapuu
+
 #### 2.2
 * Some Wapuus were showing broken images, now fixed.
 
