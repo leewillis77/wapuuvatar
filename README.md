@@ -20,6 +20,9 @@ Fun? For the love of Wapuus? Do you need more reason?
 
 ## Changelog
 
+#### 2.4
+* Added Swiss Wapuu, and festive Wapuu
+
 #### 2.3
 * Add EduWapuu, Wapevil and SwedenWapuu
 
