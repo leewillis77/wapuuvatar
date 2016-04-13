@@ -4,7 +4,7 @@ Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&
 Tags: avatar, wapuu
 Requires at least: 3.0
 Tested up to: 4.4
-Stable tag: 2.4
+Stable tag: 2.5
 
 == Description ==
 Uses Wapuus from [the Wapuu archive](https://github.com/jawordpressorg/wapuu) as your site avatars.
@@ -27,6 +27,9 @@ Fun? For the love of Wapuus? Do you need more reason?
 1. Wapuus in action
 
 == Changelog ==
+
+= 2.5 =
+* 16 new Wapuus from the archive!
 
 = 2.4 =
 * Added Swiss Wapuu, and festive Wapuu

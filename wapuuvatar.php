@@ -5,7 +5,7 @@ Description: Use Wapuus for your user avatars.
 Plugin URI: http://www.leewillis.co.uk
 Author: Lee Willis
 Author URI: http://www.leewillis.co.uk
-Version: 2.4
+Version: 2.5
 License: GPL2
 Text Domain: wapuuvatar
 */
