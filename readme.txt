@@ -3,7 +3,7 @@ Contributors: leewillis77
 Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&utm_medium=www&utm_campaign=wapuuvatar
 Tags: avatar, wapuu
 Requires at least: 3.0
-Tested up to: 4.4
+Tested up to: 4.8
 Stable tag: 2.5
 
 == Description ==
