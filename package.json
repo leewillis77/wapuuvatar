@@ -1,7 +1,7 @@
 {
   "name": "wapuuvatar",
   "devDependencies": {
-    "grunt": "^1.5.2"
+    "grunt": "^1.5.3"
   },
   "dependencies": {
     "grunt-responsive-images": "^1.10.1"
