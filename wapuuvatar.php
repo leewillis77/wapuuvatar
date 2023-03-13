@@ -98,7 +98,7 @@ add_filter( 'get_avatar', 'wapuuvatar_get_avatar', 10, 6 );
 function wapuuvatar_generate_avatar_url( $id_or_email, $requested_size ) {
 
 	// Select a size.
-	$sizes = array( 128, 64, 32 );
+	$sizes = array( 256, 64 );
 	$selected_size = max($sizes);
 	foreach( $sizes as $choice ) {
 		if ( $choice >= $requested_size ) {
