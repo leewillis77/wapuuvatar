@@ -5,13 +5,13 @@ Description: Use Wapuus for your user avatars.
 Plugin URI: http://www.leewillis.co.uk
 Author: Lee Willis
 Author URI: http://www.leewillis.co.uk
-Version: 2.7
+Version: 3.0
 License: GPL2
 Text Domain: wapuuvatar
 */
 
 /*
-    Copyright (C) 2015-2021  Lee Willis  wordpress@leewillis.co.uk
+    Copyright (C) 2015-2023  Lee Willis  wordpress@leewillis.co.uk
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
