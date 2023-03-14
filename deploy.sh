@@ -15,7 +15,6 @@ SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required
 SVNURL="https://plugins.svn.wordpress.org/wapuuvatar" # Remote SVN repo on wordpress.org, with no trailing slash
 SVNUSER="leewillis77" # your svn username
 
-
 # Let's begin...
 echo ".........................................."
 echo
@@ -60,24 +59,30 @@ svn co $SVNURL $SVNPATH || exit 255
 echo "Clearing out generated image path in SVN checkout"
 rm $SVNPATH/trunk/dist/*.png || exit 254
 
+echo "Removing no longer needed files"
+rm $SVNPATH/trunk/package.json $SVNPATH/trunk/package-lock.json
+
 echo "Exporting the HEAD of master from git to the trunk of SVN"
 git checkout-index -a -f --prefix=$SVNPATH/trunk/ || exit 253
+
+echo "Removing src images"
+rm $SVNPATH/trunk/src/*
 
 echo "Ignoring github specific files, source images and deployment script"
 svn propset svn:ignore "deploy.sh
 README.md
 .git
 .gitignore
-src
 build-avatars.sh" "$SVNPATH/trunk/"
 
 echo "Changing directory to SVN and committing to trunk"
 cd $SVNPATH/trunk/
 
-exit 255
-
 # Add all new files that are not set to be ignored
 svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add
+# Remove all files that are now missing
+svn status | grep -v "^.[ \t]*\..*" | grep "^\!" | awk '{print $2}' | xargs svn delete
+
 svn commit --username=$SVNUSER -m "$COMMITMSG"
 
 echo "Creating new SVN tag & committing it"
