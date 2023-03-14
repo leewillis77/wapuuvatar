@@ -23,6 +23,12 @@ Fun? For the love of Wapuus? Do you need more reason?
 #### 3.0
 * Improvements to plugin download size
 
+#### 2.7
+* Build tool updates
+
+#### 2.6
+* Build tool updates
+
 #### 2.5
 * 16 new Wapuus from the archive!
 
