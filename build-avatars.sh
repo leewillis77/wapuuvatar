@@ -13,6 +13,6 @@ done
 
 for i in dist/*.png; do
   echo "Optimizing $i"
-  node_modules/pngquant-bin/vendor/pngquant --speed=1 --force 256 --output "$i" "$i"
-  node_modules/zopflipng-bin/vendor/zopflipng -y --lossy_8bit --lossy_transparent "$i" "$i"
+  pngquant --speed=1 --force 256 --output "$i" "$i"
+  zopflipng -y --lossy_8bit --lossy_transparent "$i" "$i"
 done
