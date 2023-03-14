@@ -58,6 +58,9 @@ echo
 echo "Creating local copy of SVN repo ..."
 svn co $SVNURL $SVNPATH
 
+echo "Clearing out generated image path in SVN checkout"
+rm $SVNPATH/trunk/dist/*.png
+
 echo "Exporting the HEAD of master from git to the trunk of SVN"
 git checkout-index -a -f --prefix=$SVNPATH/trunk/
 
@@ -66,7 +69,8 @@ svn propset svn:ignore "deploy.sh
 README.md
 .git
 .gitignore
-src" "$SVNPATH/trunk/"
+src
+build-avatars.sh" "$SVNPATH/trunk/"
 
 echo "Changing directory to SVN and committing to trunk"
 cd $SVNPATH/trunk/
