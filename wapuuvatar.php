@@ -97,13 +97,16 @@ add_filter( 'get_avatar', 'wapuuvatar_get_avatar', 10, 6 );
  */
 function wapuuvatar_generate_avatar_url( $id_or_email, $requested_size ) {
 
-	// Select a size.
-	$sizes = array( 256, 64 );
-	$selected_size = max($sizes);
-	foreach( $sizes as $choice ) {
-		if ( $choice >= $requested_size ) {
-			$selected_size = $choice;
-		}
+	// Pick an appropriate set of sizes.
+	if ($requested_size <= 64) {
+		$selected_size = 64;
+		$selected_size_2x = 128;
+	} elseif ( $requested_size > 64 && $requested_size <= 128) {
+		$selected_size = 128;
+		$selected_size_2x = 256;
+	} elseif ($requested_size > 128) {
+		$selected_size = 256;
+		$selected_size_2x = 256;
 	}
 
 	// Pick a wapuu.
@@ -112,7 +115,7 @@ function wapuuvatar_generate_avatar_url( $id_or_email, $requested_size ) {
 	$wapuu       = hexdec( substr( $hash, 0, 4) ) % count( $wapuus );
 	$wapuu_base  = apply_filters( 'wapuuvatar_chosen_wapuu', $wapuus[ $wapuu ], $id_or_email, $hash );
 	$wapuu_img   = $wapuu_base . '-' . $selected_size . '.png';
-	$wapuu_img2x = $wapuu_base . '-' . ( $selected_size * 2 ) . '.png';
+	$wapuu_img2x = $wapuu_base . '-' . ( $selected_size_2x ) . '.png';
 
 	// Common base URL.
     $base_url = plugins_url() . '/wapuuvatar/dist/';

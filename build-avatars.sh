@@ -5,6 +5,8 @@ for i in src/*; do
   name=$(echo "$i" | sed -e s/.png// | sed -e 's/src\///')
   echo "... dist/$name-256.png"
   convert -resize 256x256 -gravity center -background none -extent 256x256 "$i" dist/"$name"-256.png
+  echo "... dist/$name-128.png"
+  convert -resize 128x128 -gravity center -background none -extent 128x128 "$i" dist/"$name"-128.png
   echo "... dist/$name-64.png"
   convert -resize 64x64 -gravity center -background none -extent 64x64 "$i" dist/"$name"-64.png
 done
