@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "pngquant-bin": "^8.0.1",
+    "zopflipng-bin": "^7.1.0"
+  }
+}

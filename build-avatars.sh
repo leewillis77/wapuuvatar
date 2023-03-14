@@ -4,13 +4,13 @@ for i in src/*; do
   echo "Processing $i"
   name=$(echo "$i" | sed -e s/.png// | sed -e 's/src\///')
   echo "... dist/$name-256.png"
-  convert -resize 256 "$i" dist/"$name"-256.png
+  convert -resize 256x256 -gravity center -background none -extent 256x256 "$i" dist/"$name"-256.png
   echo "... dist/$name-64.png"
-  convert -resize 64 "$i" dist/"$name"-64.png
+  convert -resize 64x64 -gravity center -background none -extent 64x64 "$i" dist/"$name"-64.png
 done
 
 for i in dist/*.png; do
   echo "Optimizing $i"
-  #optipng -i1 -strip all -fix -o7 -force -out "$i" "$i"
-  optipng -force -out "$i" "$i"
+  node_modules/pngquant-bin/vendor/pngquant --speed=1 --force 256 --output "$i" "$i"
+  node_modules/zopflipng-bin/vendor/zopflipng -y --lossy_8bit --lossy_transparent "$i" "$i"
 done
