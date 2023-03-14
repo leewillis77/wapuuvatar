@@ -12,7 +12,7 @@ GITPATH="$CURRENTDIR" # this file should be in the base of your git repository
 
 # svn config
 SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
-SVNURL="http://plugins.svn.wordpress.org/wapuuvatar" # Remote SVN repo on wordpress.org, with no trailing slash
+SVNURL="https://plugins.svn.wordpress.org/wapuuvatar" # Remote SVN repo on wordpress.org, with no trailing slash
 SVNUSER="leewillis77" # your svn username
 
 
@@ -36,33 +36,32 @@ echo "Versions match in readme.txt and $MAINFILE. Let's proceed..."
 
 if git show-ref --tags --quiet --verify -- "refs/tags/$NEWVERSION1"
 	then
-		echo "Version $NEWVERSION1 already exists as git tag. Exiting....";
-		exit 1;
+		echo "Version $NEWVERSION1 already exists as git tag. Assuming everything pushed.";
 	else
 		echo "Git version does not exist. Let's proceed..."
+
+		cd $GITPATH
+		echo -e "Enter a commit message for this new version: \c"
+		read COMMITMSG
+		git commit -am "$COMMITMSG"
+		
+		echo "Tagging new version in git"
+		git tag -a "$NEWVERSION1" -m "Tagging version $NEWVERSION1"
+		
+		echo "Pushing latest commit to origin, with tags"
+		git push origin master
+		git push origin master --tags
 fi
-
-cd $GITPATH
-echo -e "Enter a commit message for this new version: \c"
-read COMMITMSG
-git commit -am "$COMMITMSG"
-
-echo "Tagging new version in git"
-git tag -a "$NEWVERSION1" -m "Tagging version $NEWVERSION1"
-
-echo "Pushing latest commit to origin, with tags"
-git push origin master
-git push origin master --tags
 
 echo
 echo "Creating local copy of SVN repo ..."
-svn co $SVNURL $SVNPATH
+svn co $SVNURL $SVNPATH || exit 255
 
 echo "Clearing out generated image path in SVN checkout"
-rm $SVNPATH/trunk/dist/*.png
+rm $SVNPATH/trunk/dist/*.png || exit 254
 
 echo "Exporting the HEAD of master from git to the trunk of SVN"
-git checkout-index -a -f --prefix=$SVNPATH/trunk/
+git checkout-index -a -f --prefix=$SVNPATH/trunk/ || exit 253
 
 echo "Ignoring github specific files, source images and deployment script"
 svn propset svn:ignore "deploy.sh
