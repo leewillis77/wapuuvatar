@@ -91,7 +91,7 @@ cd $SVNPATH
 svn copy trunk/ tags/$NEWVERSION1/
 
 # Remove wp.org assets from tagged version
-rm tags/$NEWVERSION1/assets/*
+ls tags/$NEWVERSION1/assets/* | xargs svn delete
 
 cd $SVNPATH/tags/$NEWVERSION1
 svn commit --username=$SVNUSER -m "Tagging version $NEWVERSION1"
