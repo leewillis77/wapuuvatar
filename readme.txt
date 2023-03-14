@@ -4,7 +4,7 @@ Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&
 Tags: avatar, wapuu
 Requires at least: 5.4
 Tested up to: 6.1
-Stable tag: 3.0
+Stable tag: 3.0.1
 
 == Description ==
 Uses Wapuus from [the Wapuu archive](https://github.com/jawordpressorg/wapuu) as your site avatars.
@@ -28,7 +28,7 @@ Fun? For the love of Wapuus? Do you need more reason?
 
 == Changelog ==
 
-= 3.0 =
+= 3.0.1 =
 * Reduced size of plugin
 
 = 2.7 = 

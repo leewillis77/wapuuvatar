@@ -20,7 +20,7 @@ Fun? For the love of Wapuus? Do you need more reason?
 
 ## Changelog
 
-#### 3.0
+#### 3.0.1
 * Improvements to plugin download size
 
 #### 2.7

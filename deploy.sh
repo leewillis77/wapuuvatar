@@ -61,7 +61,7 @@ echo "Clearing out generated image path in SVN checkout"
 rm $SVNPATH/trunk/dist/*.png || exit 254
 
 echo "Removing no longer needed files"
-rm $SVNPATH/trunk/package.json $SVNPATH/trunk/package-lock.json
+rm $SVNPATH/trunk/Gruntfile.js
 
 echo "Exporting the HEAD of master from git to the trunk of SVN"
 git checkout-index -a -f --prefix=$SVNPATH/trunk/ || exit 253
@@ -89,6 +89,10 @@ svn commit --username=$SVNUSER -m "$COMMITMSG"
 echo "Creating new SVN tag & committing it"
 cd $SVNPATH
 svn copy trunk/ tags/$NEWVERSION1/
+
+# Remove wp.org assets from tagged version
+rm tags/$NEWVERSION1/assets/*
+
 cd $SVNPATH/tags/$NEWVERSION1
 svn commit --username=$SVNUSER -m "Tagging version $NEWVERSION1"
 
