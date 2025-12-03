@@ -6,8 +6,6 @@ Requires at least: 5.4
 Tested up to: 6.9
 License: GPLv2
 Stable tag: 2.7
-
-== Short description ==
 Uses Wapuus from the Wapuu archive as your site avatars.
 
 == Description ==
