@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: Wapuuvatar
-Description: Use Wapuus for your user avatars.
-Plugin URI: http://www.leewillis.co.uk
-Author: Lee Willis
-Author URI: http://www.leewillis.co.uk
-Version: 2.7
-License: GPL2
-Text Domain: wapuuvatar
+ * Plugin Name: Wapuuvatar
+ * Description: Use Wapuus for your user avatars.
+ * Plugin URI: http://www.leewillis.co.uk
+ * Author: Lee Willis
+ * Author URI: http://www.leewillis.co.uk
+ * Version: 2.7
+ * License: GPLv2
+ * Text Domain: wapuuvatar
 */
 
 /*
@@ -33,7 +33,6 @@ Text Domain: wapuuvatar
 function wapuuvatar_init() {
 	$locale = apply_filters( 'plugin_locale', get_locale(), 'wapuuvatar' );
 	load_textdomain( 'wapuuvatar', WP_LANG_DIR . '/wapuuvatar/wapuuvatar-' . $locale . '.mo' );
-	load_plugin_textdomain( 'wapuuvatar', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 }
 add_action( 'init', 'wapuuvatar_init' );
 
