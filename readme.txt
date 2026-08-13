@@ -3,7 +3,7 @@ Contributors: leewillis77
 Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&utm_medium=www&utm_campaign=wapuuvatar
 Tags: avatar, wapuu
 Requires at least: 5.4
-Tested up to: 7.0
+Tested up to: 7.1
 License: GPLv2
 Stable tag: 2.7
 Uses Wapuus from the Wapuu archive as your site avatars.
